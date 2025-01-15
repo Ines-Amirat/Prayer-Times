@@ -26,14 +26,26 @@ userPosts(1)
 */
 
 
-function prayerTimeCity(){
-       let address= "annaba"
-       url = `https://api.allorigins.win/raw?url=https://api.aladhan.com/timingsByAddress/02-01-2025?address=${address}`
-       axios.get(url)
-             .then((response) => {
-                  let data = response.data
-                  console.log(data.data.timings)
-             })
-}
+function prayerTimeCity() {
+    let address = "annaba"
+    url = `https://api.allorigins.win/raw?url=https://api.aladhan.com/timingsByAddress/02-01-2025?address=${address}`
+    axios.get(url)
+        .then((response) => {
+            let data = response.data
+            let timings = data.data.timings
+             
+            document.getElementById("city").innerHTML = address
+            Object.getOwnPropertyNames(timings).forEach((val) => {
+                document.getElementById("table-prayer").innerHTML += ` <tr>
+                                                                                <td>${val}</td>
+                                                                                <td>${timings[val]}</td>   
+                                                                        </tr>`
+                                                                    })
+                
+
+                })
+        }
+
+
 
 prayerTimeCity()
