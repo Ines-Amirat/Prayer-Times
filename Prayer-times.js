@@ -1,51 +1,36 @@
-/*function userPosts(IdUser) {
-
-
-    url = `https://jsonplaceholder.typicode.com/posts?userId=${IdUser}`
-    axios.get(url)
-        .then((response) => {
-            console.log(response)
-            let posts = response.data
-            document.getElementById("postI").innerHTML = ""
-            for (post of posts) {
-                document.getElementById("postI").innerHTML += ` <div class="postUser">
-                                                                <h1>${post.title}</h1>
-                                                                <h3>${post.body}</h3>
-                                                            </div>`
-            }
-
-        })
-        .catch(error => {
-            console.log(error);
-        })
-
-}
-        
-
-userPosts(1)
-*/
-
 
 function prayerTimeCity() {
-    let address = "annaba"
-    url = `https://api.allorigins.win/raw?url=https://api.aladhan.com/timingsByAddress/02-01-2025?address=${address}`
+   
+    let address = document.getElementById("city").value
+    console.log(document.getElementById("city").value)
+    url = `https://api.allorigins.win/raw?url=https://api.aladhan.com/timingsByAddress/16-01-2025?address=${address}`
     axios.get(url)
         .then((response) => {
             let data = response.data
             let timings = data.data.timings
              
-            document.getElementById("city").innerHTML = address
+
+            let gregorian = data.data.date.gregorian.date
+            let hijri = data.data.date.hijri.date
+            let method = data.data.meta.method.name
+
+            document.getElementById("city").innerHTML = `Prayer Times in ${address},`
+            document.getElementById("miladi").innerHTML = gregorian
+            document.getElementById("hijri").innerHTML = hijri
             Object.getOwnPropertyNames(timings).forEach((val) => {
                 document.getElementById("table-prayer").innerHTML += ` <tr>
                                                                                 <td>${val}</td>
                                                                                 <td>${timings[val]}</td>   
                                                                         </tr>`
                                                                     })
-                
+            console.log( Object.getOwnPropertyNames(timings))
+          
+            document.getElementsByClassName("method")[0].innerHTML = method
+            })
+            .catch(error => {
+                    console.log(error);
+            })
 
-                })
         }
 
 
-
-prayerTimeCity()

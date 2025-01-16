@@ -11,13 +11,25 @@
     <div class="principale">
         <div class="center">
             <div class="container">
-                <div id="city"></div>
+                <div class ="place">
+                    <input class="placeEnter" type="text" placeholder="Place Name">
+                    <button class="search" onclick="prayerTimeCity()">Search</button>
+                </div>
+                <h1 id="city"></h1>
+                <div class ="written">
+                    <p id="miladi"></p>
+                    <p id="hijri"></p>
+                </div>
                 <table id="table-prayer" class="Prayer-Times">
                     <tr>
                         <th class="th">Prayer</th>
                         <th class="th">Azan Time</th>
                     </tr>
                 </table>
+                <div class="met">
+                    <h3>Calc Method</h3>
+                    <p class="method"></p>
+                </div>
             </div>
         </div>
     </div>

@@ -10,9 +10,9 @@
 .center{
 
       height: 100%;
-      width: 50%;
+      width: 55%;
       background-color: rgb(255, 255, 255);
-      padding-top:20%;
+      
       
 
      
@@ -44,6 +44,7 @@ td, th{
 #table-prayer{
       
       background-color: rgb(255, 255, 255);
+      
      
       
 }
@@ -52,9 +53,50 @@ td, th{
 #city{
       background-color: rgb(185, 169, 169);
       text-align: center;
-      margin-bottom: 10%;
+      margin-bottom: 30px;
       padding: 30px;
       font-size: large;
+      font-weight: bold;
+      border-radius: 5px;
 
       
 }
+
+.written{
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    text-align: right;
+    
+}
+
+.place{
+      margin-bottom: 10%;
+      margin-top:20px ;
+}
+
+.placeEnter{
+     width: 35%;
+     height: 30px;
+     border-radius: 5px;
+     border: solid 1px rgb(185, 169, 169);
+     
+}
+
+.search{
+      background-color: rgb(224, 216, 216);
+      height: 30px;
+      border-radius: 5px;
+      border: solid 1px rgb(185, 169, 169);
+      cursor: pointer;
+      font-weight: bold;
+
+}
+
+.search:hover{
+      background-color: rgb(185, 169, 169);
+}
+
+.met{
+      margin-top: 5%;
+}
+
